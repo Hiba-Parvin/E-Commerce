@@ -1,0 +1,98 @@
+
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-2 text-center categ">
+
+            <a (click)="filter('')">
+                <img class="w-75" src="https://i.postimg.cc/bJYn47L2/bg-Copy.jpg" alt="">
+                <h3>All Books</h3>
+            </a>
+
+
+        </div>
+        <div class="col-2 text-center  categ">
+
+            <a  (click)="filter('Art of')">
+                <img class="w-75" src="https://i.postimg.cc/FK4R54Vq/FFEXXq-FVEAIE48f.jpg" alt="">
+                <h3>"Art Of" Series</h3>
+            </a>
+
+
+        </div>
+        <div class="col-2 text-center  categ">
+   
+            <a (click)="filter('Masters')">
+                <img class="w-75" src="https://i.postimg.cc/Gp5kx9CY/NFowkes-04.jpg" alt="">
+                <h3>Artist's Master Series</h3>
+            </a>
+
+
+        </div>
+        <div class="col-2 text-center  categ">
+ 
+            <a (click)="filter('Beginners Guide')">
+                <img class="w-75" src="https://i.postimg.cc/GmS9H0mR/proc-01-1024x1024-2x.webp" alt="">
+                <h3>Beginner's Guides</h3>
+            </a>
+
+
+        </div>
+        <div class="col-2 text-center  categ">
+   
+            <a (click)="filter('Character Design')">
+                <img class="w-75" src="https://i.postimg.cc/ZKTL3rVY/funcha-01-1024x1024-2x.webp" alt="">
+                <h3>Character Design</h3>
+            </a>
+
+
+        </div>
+        <div class="col-2 text-center  categ">
+ 
+            <a (click)="filter('Anatomy')">
+                <img class="w-75" src="https://i.postimg.cc/3NkWjYJY/1185.jpg" alt="">
+                <h3>Anatomy</h3>
+            </a>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<hr>
+
+<!-- Section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+    
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5" *ngFor="let i of filterCategory | filter:'':'productName'">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img style="height: 350px;" class="card-img-top" src="{{i.productImg}}" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{i.productName}}</h5>
+                            <!-- Product price-->
+                            <h6>Author : {{i.author}}</h6>
+                            <h6>Rating : {{i.rating}}</h6>
+                            <h6>Rs.{{i.price}}</h6>
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                routerLink="view-product/{{i.id}}">View</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,13 @@
+   {
+        "id": ,
+        "productName": "",
+        "categoryName":"",
+        "description":"",
+        "price":,
+        "is_available":true,
+        "productImg":"",
+        "rating":,
+        "review":,
+        "publisher":"",
+        "author":""
+      },
